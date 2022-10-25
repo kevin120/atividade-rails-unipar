@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ROUTES from "../../../src/config/routes";
 import ArticleService from "../../../src/services/ArticleService";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from "@mui/material";
 
 function ShowArticle() {
   const router = useRouter()
@@ -28,7 +30,7 @@ function ShowArticle() {
             pathname: ROUTES.articles.list,
           }}
         >
-          <a>Voltar</a>
+          <Button variant="contained" color="error" size="small" startIcon={<ArrowBackIcon fontSize="small" />}>Voltar</Button>
         </Link>
       </p>
 

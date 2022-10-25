@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import ROUTES from "../../../src/config/routes";
 import UserService from "../../../src/services/UserService";
+import SendIcon from '@mui/icons-material/Send';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from "@mui/material";
 
 function EditUser() {
 
@@ -44,7 +47,7 @@ function EditUser() {
             pathname: ROUTES.users.list,
           }}
         >
-          <a>Cancelar</a>
+          <Button variant="contained" color="error" size="small" startIcon={<ArrowBackIcon fontSize="small" />}>Voltar</Button>
         </Link>
       </p>
 
@@ -61,7 +64,9 @@ function EditUser() {
           {errors.email && <p>email is required.</p>}
         </div>
 
-        <input type="submit" />
+        <Button type="submit" variant="contained" color="success" size="small" startIcon={<SendIcon fontSize="small"/>}>
+          Enviar
+        </Button>
       </form>
     </>
   );

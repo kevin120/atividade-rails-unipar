@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 
 // Material Icons
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
@@ -100,14 +101,14 @@ function ArticleList() {
                 pathname: ROUTES.articles.new,
               }}
             >
-              <Button variant="contained" color="success" size="small" startIcon={<DeleteForeverIcon fontSize="small" />}>
+              <Button variant="contained" color="success" size="small" startIcon={<AddBoxIcon fontSize="small" />}>
                 New Article
               </Button>
             </Link>
           </p>
         </Grid>
         <Grid xs={12}>
-          <table>
+          <table cellspacing="7" cellpadding="4">
             <thead>
               <tr>
                 <th>ID</th>

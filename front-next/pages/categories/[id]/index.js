@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ROUTES from "../../../src/config/routes";
 import CategoryService from "../../../src/services/CategoryService";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from "@mui/material";
+
 
 function ShowCategory() {
   const router = useRouter()
@@ -28,7 +31,7 @@ function ShowCategory() {
             pathname: ROUTES.categories.list,
           }}
         >
-          <a>Voltar</a>
+          <Button variant="contained" color="error" size="small" startIcon={<ArrowBackIcon fontSize="small" />}>Voltar</Button>
         </Link>
       </p>
 

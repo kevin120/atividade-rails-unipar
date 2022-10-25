@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 
 // Material Icons
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
@@ -99,14 +100,14 @@ function CategoryList() {
                 pathname: ROUTES.categories.new,
               }}
             >
-              <Button variant="contained" color="success" size="small" startIcon={<DeleteForeverIcon fontSize="small" />}>
+              <Button variant="contained" color="success" size="small" startIcon={<AddBoxIcon fontSize="small" />}>
                 New Category
               </Button>
             </Link>
           </p>
         </Grid>
         <Grid xs={12}>
-          <table>
+          <table cellspacing="7" cellpadding="4">
             <thead>
               <tr>
                 <th>ID</th>
@@ -119,6 +120,7 @@ function CategoryList() {
               {categories.map((category) => {
                 return (
                   <tr key={category.id}>
+                    <td>{category.id}</td>
                     <td>{category.name}</td>
                     <td>{category.created_at}</td>
                     <td>

@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ROUTES from "../../../src/config/routes";
 import CategoryService from "../../../src/services/CategoryService";
+import SendIcon from '@mui/icons-material/Send';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from "@mui/material";
 
 function EditCategory() {
   const router = useRouter();
@@ -43,7 +46,7 @@ function EditCategory() {
             pathname: ROUTES.categories.list,
           }}
         >
-          <a>Cancelar</a>
+          <Button variant="contained" color="error" size="small" startIcon={<ArrowBackIcon fontSize="small" />}>Voltar</Button>
         </Link>
       </p>
 
@@ -55,7 +58,9 @@ function EditCategory() {
           {errors.name && <p>name is required.</p>}
         </div>
 
-        <input type="submit" />
+        <Button type="submit" variant="contained" color="success" size="small" startIcon={<SendIcon fontSize="small"/>}>
+          Enviar
+        </Button>
       </form>
     </>
   );

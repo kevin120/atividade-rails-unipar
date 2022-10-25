@@ -7,6 +7,9 @@ import ROUTES from "../../src/config/routes";
 import ArticleService from "../../src/services/ArticleService";
 import CategoryService from "../../src/services/CategoryService";
 import UserService from "../../src/services/UserService";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SendIcon from '@mui/icons-material/Send';
+import { Button } from "@mui/material";
 
 function NewArticle() {
   const router = useRouter()
@@ -40,7 +43,7 @@ function NewArticle() {
             pathname: ROUTES.articles.list,
           }}
         >
-          <a>Cancelar</a>
+          <Button variant="contained" color="error" size="small" startIcon={<ArrowBackIcon fontSize="small" />}>Voltar</Button>
         </Link>
       </p>
 
@@ -88,8 +91,9 @@ function NewArticle() {
           <input {...register("published_at", { required: true })} />
           {errors.published_at && <p>Published at is required.</p>}
         </div>
-
-        <input type="submit" />
+        <Button type="submit" variant="contained" color="success" size="small" startIcon={<SendIcon fontSize="small"/>}>
+          Enviar
+        </Button>
       </form>
     </>
   );
